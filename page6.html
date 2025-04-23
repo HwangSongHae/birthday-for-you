@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>선물박스 1</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>
+    .gift-box-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 50px;
+    }
+    .gift-box.clicked {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎁 한번은 아쉽지 ~ </h2>
+  <div class="gift-box-container">
+    <div class="gift-box" onclick="revealRandomCoupon(this)">🎁</div>
+    <div class="gift-box" onclick="revealRandomCoupon(this)">🎁</div>
+    <div class="gift-box" onclick="revealRandomCoupon(this)">🎁</div>
+  </div>
+
+  <div id="coupon1" class="coupon hidden"> 선물 1 </div>
+  <div id="coupon2" class="coupon hidden"> 선물 2</div>
+  <div id="coupon3" class="coupon hidden"> 선물 3</div>
+
+  <!-- 오빠라고 부르기  -->
+  <!-- 뽀뽀  -->
+  <!-- 포옹  -->
+  <a href="page6.html" class="nav-button">다음 ▶️</a>
+
+  <script>
+    let couponRevealed = false;
+
+    function revealRandomCoupon(box) {
+      if (couponRevealed) return;
+      couponRevealed = true;
+
+      const coupons = ["coupon1", "coupon2", "coupon3"];
+      const chosen = coupons[Math.floor(Math.random() * coupons.length)];
+
+      document.getElementById(chosen).classList.remove("hidden");
+      box.classList.add("clicked");
+    }
+  </script>
+</body>
+</html>

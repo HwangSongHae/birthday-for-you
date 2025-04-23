@@ -2,52 +2,18 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>지민아 생일 축하해!</title>
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(to top, #fceabb, #f8b500);
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      margin-top: 80px;
-      font-size: 3em;
-      animation: pop 0.5s ease-in-out infinite alternate;
-    }
-    @keyframes pop {
-      from { transform: scale(1); }
-      to { transform: scale(1.05); }
-    }
-    #message {
-      font-size: 1.5em;
-      margin-top: 20px;
-    }
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      animation: floatUp 10s linear infinite;
-    }
-    @keyframes floatUp {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-120vh); }
-    }
-  </style>
+  <title>생일 축하해!</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>🎉 Happy Birthday, 지민아! 🎉</h1>
-  <p id="message">오늘 하루, 너만큼 반짝이길 바라!</p>
-
-  <!-- 풍선 3개 -->
-  <img class="balloon" src="https://i.ibb.co/NjJFscm/balloon1.png" style="left:10%;">
-  <img class="balloon" src="https://i.ibb.co/KDLZ2r9/balloon2.png" style="left:50%;">
-  <img class="balloon" src="https://i.ibb.co/tM8gFZm/balloon3.png" style="left:80%;">
-
-  <!-- 음악 자동 재생 -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-birthday.mp3" type="audio/mp3">
-  </audio>
+  <div id="app">
+    <!-- 1. 첫 화면 -->
+    <section id="page1" class="page">
+      <h1>🎉 생일 축하해, OO야! 🎉</h1>
+      <p>이 페이지는 너만을 위한 깜짝 선물이야!</p>
+      <a href="page2.html" class="nav-button">시작하기 💖</a>
+    </section>
+  </div>
 </body>
 </html>
