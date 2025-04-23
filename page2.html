@@ -2,8 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>추억의 순간들</title>
+  <script src="header.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>추억의 순간들</title>
 </head>
 <body>
   <h2>📸 우리의 추억들</h2>
@@ -16,10 +20,15 @@
       const img = document.createElement("img");
       img.src = `images/photo${i}.jpg`;
       img.alt = `추억${i}`;
+      img.setAttribute("data-aos", "flip-up");
       gallery.appendChild(img);
     }
   </script>
   
   <a href="page3.html" class="nav-button">다음 ▶️</a>
+  <script>
+    AOS.init();
+  </script>
+  
 </body>
 </html>
