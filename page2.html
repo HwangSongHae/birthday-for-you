@@ -7,11 +7,19 @@
 </head>
 <body>
   <h2>📸 우리의 추억들</h2>
-  <div id="slideshow">
-    <img src="images/photo1.jpg" class="slide" alt="추억1">
-    <img src="images/photo2.jpg" class="slide" alt="추억2">
-    <img src="images/photo3.jpg" class="slide" alt="추억3">
-  </div>
+  <div class="photo-gallery" id="gallery"></div>
+  <a href="page3.html" class="nav-button">다음 ▶️</a>
+
+  <script>
+    const gallery = document.getElementById("gallery");
+    for (let i = 1; i <= 14; i++) {
+      const img = document.createElement("img");
+      img.src = `images/photo${i}.jpg`;
+      img.alt = `추억${i}`;
+      gallery.appendChild(img);
+    }
+  </script>
+  
   <a href="page3.html" class="nav-button">다음 ▶️</a>
 </body>
 </html>
