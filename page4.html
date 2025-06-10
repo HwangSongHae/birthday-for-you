@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>연애 타임라인</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <h2>📘 우리의 연애 이야기</h2>
-  <ul class="timeline">
-    <li>2024.00.00 첫 만남 🌱</li>
-    <li>2025.00.00 첫 여행 🧳</li>
-    <li>2025.00.00 기념일 💑</li>
-  </ul>
-  <a href="page5.html" class="nav-button">다음 ▶️</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="header.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>추억의 순간들</title>
+  </head>
+  <body>
+    <h2>📸 우리의 추억들</h2>
+    <div class="photo-gallery" id="gallery"></div>
+    <a href="page5.html" class="nav-button">다음 ▶️</a>
+
+    <script>
+      const gallery = document.getElementById("gallery");
+      for (let i = 1; i <= 14; i++) {
+        const img = document.createElement("img");
+        img.src = `images/photo${i}.jpg`;
+        img.alt = `추억${i}`;
+        img.setAttribute("data-aos", "flip-up");
+        gallery.appendChild(img);
+      }
+    </script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>

@@ -1,34 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <script src="header.js"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <title>추억의 순간들</title>
-</head>
-<body>
-  <h2>📸 우리의 추억들</h2>
-  <div class="photo-gallery" id="gallery"></div>
-  <a href="page3.html" class="nav-button">다음 ▶️</a>
+  <head>
+    <meta charset="UTF-8" />
+    <title>짧은 편지</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h2>💌</h2>
+    <p id="letter"></p>
 
-  <script>
-    const gallery = document.getElementById("gallery");
-    for (let i = 1; i <= 14; i++) {
-      const img = document.createElement("img");
-      img.src = `images/photo${i}.jpg`;
-      img.alt = `추억${i}`;
-      img.setAttribute("data-aos", "flip-up");
-      gallery.appendChild(img);
-    }
-  </script>
-  
-  <a href="page3.html" class="nav-button">다음 ▶️</a>
-  <script>
-    AOS.init();
-  </script>
-  
-</body>
+    <script>
+      const paragraphs = [
+        [
+          "생일 축하해 ! 내 창아 ❣ <br>" +
+            "태양이 뜨겁게 내리쬐는 여름에 태어난 자기라, <br> " +
+            "자기도 이토록 열렬한 사람인걸까. 🌞💖",
+        ],
+
+        [
+          "작년까지만 해도 강습생이었던 나와 선생님이었던 자기가 이렇게 사귀고 있다니.<br>" +
+            "나 혼자 자기를 좋아하는 줄 알았는데, 당신도 날 좋아했었다는 사실이 신기하고 놀라워.🤭<br>" +
+            "그랬던 나와 자기가 현재 애인 사이라는 게 기뻐서 가끔씩 벅차오를 때가 있어.<br>" +
+            "지금 생각해보면 그 모든 순간들이, 결국 오늘의 우리를 만든 거겠지.",
+        ],
+
+        [
+          "자기가 저번에 자기를 왜 좋아하게 됐냐고 물어본 적 있었어. 기억나 ? <br>" +
+            "멋있는 말을 해주고 싶었는데 순간 머리가 새하얘지더라.<br>" +
+            "그러니까 지금 말할게.",
+        ],
+
+        [
+          "자기가 본인 일에 자부심과 책임감을 가지고 임하는 모습도,<br>" +
+            "자신의 기준이 확고하면서 타인을 배척하지 않는 사람이라는 점이 좋았어. <br>" +
+            "어른스러우면서도 장난기가 많은 모습도,<br>" +
+            "책과 서점을 좋아하는 모습에서 나랑 비슷한 취미를 가지고 있는 자기가 점점 좋아지더라.",
+        ],
+
+        ["물론 지금은 자기가 좋은 이유가 훨씬 더 많지만 말야. 💝"],
+
+        [
+          "그리고 알지 ? 자기랑 하는 연애가 내 첫 연애잖아 💑 <br>" +
+            "내가 한 사람에게 이렇게 온 맘 다해 마음을 쏟게 될 거 라고 짐작도 못했어.<br>" +
+            "그러니까 나 책임져야 돼 ~ 김재창 ! 알겠지 ? 😤",
+        ],
+
+        [
+          "이렇게 편지를 적는 와중에도 자기가 너무 보고 싶네. 🥺<br>" +
+            "많이 좋아하고, 많이 애정하고 있어.<br>" +
+            "우리 지금처럼 서로 아끼고 사랑하자. 🌹",
+        ],
+        [
+          "생일 진심으로 축하해.🎉🥳<br>" +
+            "앞으로 다가올 자기의 많은 나날이 따뜻하고 반짝이길 바랄게.✨ <br>" +
+            "내가 많이 사랑해 ! ❤️",
+        ],
+      ];
+
+      let currentIndex = 0;
+
+      document.body.addEventListener("click", () => {
+        if (currentIndex >= paragraphs.length) return;
+
+        const letterEl = document.getElementById("letter");
+        letterEl.innerHTML += paragraphs[currentIndex] + "<br><br>";
+        currentIndex++;
+
+        // 스크롤 아래로 자동 이동
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <a href="page4.html" class="nav-button">다음 ▶️</a>
+  </body>
 </html>
