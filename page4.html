@@ -8,24 +8,121 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>추억의 순간들</title>
+    <style>
+      .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .photo-card {
+        width: 300px;
+        text-align: center;
+      }
+
+      .photo-card img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .description {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #444;
+      }
+
+      .nav-button {
+        display: block;
+        margin: 40px auto;
+        padding: 10px 20px;
+        background-color: #ffd1dc;
+        text-decoration: none;
+        border-radius: 8px;
+        color: black;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
-    <h2>📸 우리의 추억들</h2>
+    <h2 style="text-align: center">📸 우리의 추억들</h2>
     <div class="photo-gallery" id="gallery"></div>
     <a href="page5.html" class="nav-button">다음 ▶️</a>
 
     <script>
       const gallery = document.getElementById("gallery");
-      for (let i = 1; i <= 14; i++) {
-        const img = document.createElement("img");
-        img.src = `images/photo${i}.jpg`;
-        img.alt = `추억${i}`;
-        img.setAttribute("data-aos", "flip-up");
-        gallery.appendChild(img);
-      }
-    </script>
 
-    <script>
+      // 각 이미지에 대한 설명 (없는 번호는 생략됨)
+      const imageDescriptions = {
+        1: "포항 아띠에서",
+        2: "자기 집 앞에서",
+        3: "영광의 상처",
+        4: "우리 첫 데이트 ♥",
+        5: "어윀에서 사진 찰칵",
+        6: "커플 시계 티내기",
+        7: "짜잔 !",
+        8: "내가 더 잘찍어의 시초",
+        10: "귀여운 바보창 . .",
+        11: "부산 서점에서",
+        13: "자기, 나이책 다 읽었어 ?",
+        14: "나락도 rock이다★",
+        16: "벚꽃과 창",
+        17: "우헤헤 창",
+        18: "쭈구린 창 . . 자기야 허리펴",
+        19: "쭈구린 창 22",
+        20: "5분안에 푸파해야할 미래를 모르던 그들",
+        21: "신발 자랑하기",
+        23: "쁘이 !",
+        24: "창아 쁘이해바",
+        25: "창 : 이렇게 ?",
+        27: "아니, 이렇게",
+        28: "마냥 좋은 바보 둘",
+        31: "카피바라에게 지배당하는 인간들",
+        32: "스트롱 걸",
+        35: "귀여운 녀석 둘이서",
+        36: "히히 꽃이다",
+        37: "우리",
+        38: "사랑",
+        39: "뽀에버 ♥",
+        41: "짜근하트랑 동그라미",
+        42: "",
+        43: "창아 생일축하해 -♡-",
+      };
+
+      for (let i = 1; i <= 45; i++) {
+        if (
+          i === 12 ||
+          i === 15 ||
+          i === 26 ||
+          i === 29 ||
+          i === 30 ||
+          i === 40 ||
+          i === 44 ||
+          i === 45
+        ) {
+          continue;
+        }
+        const photoCard = document.createElement("div");
+        photoCard.className = "photo-card";
+        photoCard.setAttribute("data-aos", "flip-up");
+
+        const img = document.createElement("img");
+        img.src = `images/image (${i}).jpg`;
+        img.alt = `추억${i}`;
+        photoCard.appendChild(img);
+
+        if (imageDescriptions[i]) {
+          const desc = document.createElement("div");
+          desc.className = "description";
+          desc.innerText = imageDescriptions[i];
+          photoCard.appendChild(desc);
+        }
+
+        gallery.appendChild(photoCard);
+      }
+
       AOS.init();
     </script>
   </body>
