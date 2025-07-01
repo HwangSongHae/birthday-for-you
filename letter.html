@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>짧은 편지</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h2>💌</h2>
+    <p id="letter"></p>
+
+    <script>
+      const paragraphs = [
+        [
+          "안녕, 내꺼야 ❣ <br>" +
+            "태양이 뜨겁게 내리쬐는 여름에 태어난 자기라, <br> " +
+            "자기도 이토록 따뜻한 사람인걸까. 🌞💖",
+        ],
+
+        [
+          "자기가 저번에 자기를 왜 좋아하는지 물어본 적 있었어. 기억나 ? <br>" +
+            "멋있는 말을 해주고 싶었는데 순간 머리가 새하얘지더라.<br>" +
+            "그러니까 이 기회를 빌려 말할게.",
+        ],
+
+        [
+          "자기가 본인 일에 자부심과 책임감을 가지고 임하는 모습이 좋아.<br>" +
+            "졸려서 자고 있을 때 괴롭히고 싶을 정도로 순한 모습이 귀여워. <br>" +
+            "그렇게 한없이 귀엽다가도 진지한 순간에 몰입한 모습도 좋아해. <br>" +
+            "주근깨있는 것도, 장난기 가득한 모습도 매력적이야.<br>" +
+            "책과 서점을 좋아하는 모습마저 좋아.",
+        ],
+
+        [
+          "내가 이렇게 한 사람에게 마음을 줄 될 거 라고 짐작도 못했는데 말이야.<br>" +
+            "자기 말대로 콩깍지 어쩌면 좋지 싶기도 하고 . . .<br>" +
+            "귀여운데 어쩌나 싶기도 하고 ? 그러게 누가 그렇게 귀여우래 ?<br>",
+        ],
+
+        [
+          "아무튼 ! 많이 좋아하고, 많이 애정하고 있어.<br>" +
+            "우리 지금처럼 서로 아끼고 사랑하자. 💑🌹",
+        ],
+        [
+          "생일 진심으로 축하해.🎉🥳<br>" +
+            "앞으로 다가올 자기의 많은 나날이 따뜻하고 반짝이길 바랄게.✨ <br>" +
+            "내가 많이 사랑해 ! ❤️",
+        ],
+      ];
+
+      let currentIndex = 0;
+
+      document.body.addEventListener("click", () => {
+        if (currentIndex >= paragraphs.length) return;
+
+        const letterEl = document.getElementById("letter");
+        letterEl.innerHTML += paragraphs[currentIndex] + "<br><br>";
+        currentIndex++;
+
+        // 스크롤 아래로 자동 이동
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <a href="gallery.html" class="nav-button">다음 ▶️</a>
+    <!-- <a href="gellery.html" class="nav-button">다음 ▶️</a> -->
+  </body>
+</html>
